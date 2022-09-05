@@ -1,4 +1,4 @@
-
+/* 
 const valorFinal = (precios) => {
     let suma = 0;
     for (let i = 0; i < precios.length; i++) {
@@ -31,4 +31,41 @@ valores.push(producto4);
 
 const totalPago = valorFinal(valores);
 
-alert("el valor total a pagar es : " + totalPago + " . Gracias por su compra.");
+alert("el valor total a pagar es : " + totalPago + " . Gracias por su compra."); */
+
+
+const productos = [
+    { id: 1, nombre: "guatero semillas", precio: 10000 },
+    { id: 2, nombre: "lumbar", precio: 8000 },
+    { id: 3, nombre: "muñeca", precio: 5000 },
+    { id: 4, nombre: "lactancia", precio: 8000 },
+];
+
+const buscarProductos = (nombre) => {
+
+    let productosFiltrados = productos.filter(item => item.nombre.includes(nombre));
+    /* console.log(productosFiltrados) */
+
+    let mensaje = "";
+    if (productosFiltrados.length === 0) {
+        mensaje = "producto no encontrado";
+    } else {
+
+        for (const item of productosFiltrados) {
+            mensaje = mensaje + `
+            Nombre: ${item.nombre}
+            Precio: ${item.precio} 
+            ` ;
+        }
+
+        
+
+
+
+    }
+
+    alert(mensaje);
+}
+
+let nombre = prompt("ingrese el nombre del producto que busca");
+buscarProductos(nombre);
