@@ -3,9 +3,6 @@ h1{
     background-color: rgb(217, 223, 223);
 }
 
-/* .card-border-success{
-    border: solid, 8px, rgb(133, 214, 133);
-} */
-
-
-/* bs-card-border-width: 4px; */
+.resultado{
+    padding: 10px;
+}

@@ -80,7 +80,7 @@ buscarProductos(nombre); */
 
 /* dom */
 
-const productos = [
+/* const productos = [
     { id: 1, nombre: "guatero semillas", precio: 10000 },
     { id: 2, nombre: "lumbar", precio: 8000 },
     { id: 3, nombre: "muñeca", precio: 5000 },
@@ -110,4 +110,48 @@ const buscarProductos = (nombre) => {
 }
 
 let nombre = prompt("ingrese el nombre del producto que busca");
-buscarProductos(nombre); 
+buscarProductos(nombre);  */
+
+
+/* evento */
+
+const productos = [
+    { id: 1, nombre: "guatero semillas", precio: 10000 },
+    { id: 2, nombre: "lumbar", precio: 8000 },
+    { id: 3, nombre: "muñeca", precio: 5000 },
+    { id: 4, nombre: "lactancia", precio: 8000 },
+];
+
+const buscarProductos = (nombre) => {
+
+    let productosFiltrados = productos.filter(item => item.nombre.includes(nombre));
+
+    let mensaje = "";
+    if (productosFiltrados.length === 0) {
+        mensaje = "producto no encontrado";
+    } else {
+
+        for (const prod of productosFiltrados) {
+            let item = document.createElement("div");
+            item.innerHTML = `<p> Nombre: ${prod.nombre} </p>
+                         <p>Precio: ${prod.precio}  </p>
+                         ` ;
+                         item.className ='resultado col-3 card border-success mb-3';
+
+            contenedor.append(item);
+        }
+    }
+}
+
+/* let nombre = prompt("ingrese el nombre del producto que busca");
+buscarProductos(nombre); */ 
+
+
+let boton = document.getElementById("btnBuscar");
+boton.addEventListener("click",(e) => {
+    e.preventDefault();
+
+    let inpTexto = document.getElementById("inpBuscar");
+    console.log(inpTexto.value);
+    buscarProductos(inpTexto.value);
+} )
