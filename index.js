@@ -1,6 +1,3 @@
-/* descuento por productos */
-
-
 /* 
 
 
@@ -40,10 +37,10 @@ alert("el valor total a pagar es : " + totalPago + " . Gracias por su compra.");
 
 
 
-/* buscador de productos */
+/* buscador de productosPrueba */
 /* 
 
-const productos = [
+const productosPrueba = [
     { id: 1, nombre: "guatero semillas", precio: 10000 },
     { id: 2, nombre: "lumbar", precio: 8000 },
     { id: 3, nombre: "muñeca", precio: 5000 },
@@ -52,15 +49,15 @@ const productos = [
 
 const buscarProductos = (nombre) => {
 
-    let productosFiltrados = productos.filter(item => item.nombre.includes(nombre));
-    /* console.log(productosFiltrados) */
+    let productosPruebaFiltrados = productosPrueba.filter(item => item.nombre.includes(nombre));
+    /* console.log(productosPruebaFiltrados) */
 
 /*  let mensaje = "";
- if (productosFiltrados.length === 0) {
+ if (productosPruebaFiltrados.length === 0) {
      mensaje = "producto no encontrado";
  } else {
 
-     for (const item of productosFiltrados) {
+     for (const item of productosPruebaFiltrados) {
          mensaje = mensaje + `
          Nombre: ${item.nombre}
          Precio: ${item.precio} 
@@ -80,7 +77,7 @@ buscarProductos(nombre); */
 
 /* dom */
 
-/* const productos = [
+/* const productosPrueba = [
     { id: 1, nombre: "guatero semillas", precio: 10000 },
     { id: 2, nombre: "lumbar", precio: 8000 },
     { id: 3, nombre: "muñeca", precio: 5000 },
@@ -90,14 +87,14 @@ buscarProductos(nombre); */
 const buscarProductos = (nombre) => {
 
     let contenedor = document.getElementById("contenedor");
-    let productosFiltrados = productos.filter(item => item.nombre.includes(nombre));
+    let productosPruebaFiltrados = productosPrueba.filter(item => item.nombre.includes(nombre));
 
     let mensaje = "";
-    if (productosFiltrados.length === 0) {
+    if (productosPruebaFiltrados.length === 0) {
         mensaje = "producto no encontrado";
     } else {
 
-        for (const prod of productosFiltrados) {
+        for (const prod of productosPruebaFiltrados) {
             let item = document.createElement("div");
             item.innerHTML = `<p> Nombre: ${prod.nombre} </p>
                          <p>Precio: ${prod.precio}  </p>
@@ -115,7 +112,7 @@ buscarProductos(nombre);  */
 
 /* evento */
 
-const productos = [
+const productosPrueba = [
     { id: 1, nombre: "guatero semillas", precio: 10000 },
     { id: 2, nombre: "lumbar", precio: 8000 },
     { id: 3, nombre: "muñeca", precio: 5000 },
@@ -124,14 +121,14 @@ const productos = [
 
 const buscarProductos = (nombre) => {
 
-    let productosFiltrados = productos.filter(item => item.nombre.includes(nombre));
+    let productosPruebaFiltrados = productosPrueba.filter(item => item.nombre.includes(nombre));
 
     let mensaje = "";
-    if (productosFiltrados.length === 0) {
+    if (productosPruebaFiltrados.length === 0) {
         mensaje = "producto no encontrado";
     } else {
 
-        for (const prod of productosFiltrados) {
+        for (const prod of productosPruebaFiltrados) {
             let item = document.createElement("div");
             item.innerHTML = `<p> Nombre: ${prod.nombre} </p>
                          <p>Precio: ${prod.precio}  </p>
