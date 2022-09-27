@@ -20,6 +20,7 @@ const estandarPesosChilenos = Intl.NumberFormat('es-CL');
 //Arrays para guarda catálogo de productos y elementos en carrito
 const productos = [];
 const elementosCarrito = [];
+/* const totalCarrito=document.getElementById("total-carrito"); */
 const contenedorProductos = document.getElementById('contenedor-productos');
 const contenedorCarritoCompras = document.querySelector("#items")
 const contenedorFooterCarrito = document.querySelector("#footer");
@@ -36,10 +37,11 @@ dibujarCatalogoProductos();
  */
 
 function cargarProductos() {
-    productos.push(new Producto(1, 'Guatero lumbar', 11000, './imagenes/guaterolumbar.jpg'));
-    productos.push(new Producto(2, 'Guatero Cuello', 9000, './imagenes/cuello.jpg'));
-    productos.push(new Producto(3, 'Lactancia', 15000, './imagenes/lactancia.jpg'));
-    productos.push(new Producto(4, 'Guatero de muñeca', 8000, './imagenes/mano-1.jpg'));
+    productos.push(new Producto(1, 'Guatero lumbar', 11000, '../imagenes/guaterolumbar.jpg'));
+    productos.push(new Producto(2, 'Guatero Cuello', 9000, '../imagenes/cuello.jpg'));
+    productos.push(new Producto(3, 'Lactancia', 15000, '../imagenes/lactancia.jpg'));
+    productos.push(new Producto(4, 'Guatero de muñeca', 8000, '../imagenes/mano-1.jpg'));
+
 }
 
  function cargarCarrito() { 
@@ -55,10 +57,18 @@ function cargarProductos() {
 
 function dibujarCarrito() {
     contenedorCarritoCompras.innerHTML = "";
+    
+/*     totalCarrito.innerHTML = ""; */
 
+    let total=0;
     elementosCarrito.forEach(
         (elemento) => {
+            total=total+(elemento.producto.precio*elemento.cantidad);
             let renglonesCarrito= document.createElement("tr");
+
+            /* desestructuracion */
+            /* const { id,precio}=elemento.producto;
+            console.log(id,precio); */
             
             renglonesCarrito.innerHTML = `
                 <td>${elemento.producto.id}</td>
@@ -96,6 +106,39 @@ function dibujarCarrito() {
         }
     );
 
+/* total carrito */
+    /* const valorInicial = 0;
+    const totalCompra = elementosCarrito.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.producto.precio*currentValue.cantidad,
+        valorInicial
+    );
+
+    if(elementosCarrito.length === 0) {
+        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`;
+    } else {
+        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: ${totalCompra}</th>`;
+    }
+      */
+     
+
+    /* total carrito con operador ternario */
+
+    const valorInicial = 0;
+    const totalCompra = elementosCarrito.reduce(
+        (previousValue, currentValue) => previousValue + currentValue.producto.precio*currentValue.cantidad,
+        valorInicial
+    );
+
+    /* if(elementosCarrito.length === 0) {
+        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`;
+    } else {
+        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: ${totalCompra}</th>`;
+    } */
+    
+
+    contenedorFooterCarrito.innerHTML=elementosCarrito.length === 0 ? `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`:`<th scope="row" colspan="6">Total de la compra: ${totalCompra}</th>`;
+
+
 }
 
 function removerProductoCarrito(elementoAEliminar) {
@@ -131,7 +174,7 @@ function crearCard(producto) {
     //Card
     let carta = document.createElement("div");
     carta.className = "card m-2 p-2";
-    carta.style = "width: 18rem";
+    carta.style = "width: 16rem";
     carta.append(imagen);
     carta.append(cuerpoCarta);
 

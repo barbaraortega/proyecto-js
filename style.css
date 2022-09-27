@@ -1,6 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 h1{
-    color: rgb(108, 190, 108);
-    background-color: rgb(217, 223, 223);
+    color:#2a8c4a;
+   /*  background-color:rgb(224, 223, 223); */
+    margin: auto;
+    width: fit-content;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Gentium Plus', serif;
+    font-family: 'Quicksand', sans-serif; 
+    font-weight: bold;
+    font-size: 90px;
+}
+
+.navegacion{
+
+/* background-color: rgb(252, 237, 237); */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+    
+.navbar-brand{
+color: rgb(247,191,216);
+font-family: "Comfortaa", cursive;
+font-family: "Cormorant Garamond", serif;
+font-family: "Gentium Plus", serif;
+font-family: "Quicksand", sans-serif;
+font-weight: bold;
+font-size: 30px;
+display: none;
+      }
+    
+.nav-link {
+color: #68ddbd;
+font-size: 30px;
+margin: 10px;
+font-weight: bold;
+    
+       /*  &:hover {
+            color:map-get($colores,"color-footer"); 
+            transition: color;  
+            font-weight: bold;  
+        } */
+    }
+    
+.navbar-nav /* .nav-link.active */,.navbar-nav .show>.nav-link {
+color:#68ddbd;
+    /* 
+        &:hover {
+            color:map-get($colores,"color-footer"); 
+            transition: color;    
+            font-weight: bold; 
+        } */
+    }
+    
+h2{
+    margin: auto;
+    margin-bottom: 10px;
+    padding: auto;
+    width: fit-content;
+}
+
+.formulario{
+   background-color: #d0fdd7;
 }
 
 .resultado{
@@ -12,7 +78,7 @@ h1{
     max-width: 70%;
     color:black;
     font-weight: bold;
-    /* background:$bgcolorformulario; */
+    background:#d0fdd7;
     font-size: 1.2rem;
     border-radius: 5px;
     border: 3px solid green
@@ -29,4 +95,43 @@ input {
     display: block;
     color: black;
   /*   border: $border; */
+}
+#correoRecepcion{
+    opacity: 0;
+}
+
+.card{
+    border: solid 3px rgb(30, 128, 30);
+}
+h5{
+    margin: auto;
+    padding: auto;
+    width: fit-content;
+}
+
+.carrusel{
+    display: flex;
+    justify-content: center;
+    align-content: center; 
+    max-width: 100%;
+}
+
+footer{
+    background-color: #d0fdd7;
+    margin: auto;
+    padding: auto;
+    width: 100%;
+}
+.contenedorSociales{
+    color: rgb(82, 185, 82);
+    font-size: 20px;
+
+}
+.contenedorSociales,a{
+font-size: 30px;
+}
+.mapa{
+    display: block;
+    margin: auto;
+    max-width: 100%;
 }

@@ -113,10 +113,10 @@ buscarProductos(nombre);  */
 /* evento */
 
 const productosPrueba = [
-    { id: 1, nombre: "guatero semillas", precio: 10000 },
-    { id: 2, nombre: "lumbar", precio: 8000 },
-    { id: 3, nombre: "muñeca", precio: 5000 },
-    { id: 4, nombre: "lactancia", precio: 8000 },
+    { id: 1, nombre: "guatero semillas", precio: 10000, link: './paginas/bienestar.html' },
+    { id: 2, nombre: "lumbar", precio: 8000,link: './paginas/bienestar.html' },
+    { id: 3, nombre: "muñeca", precio: 5000,link: './paginas/bienestar.html' },
+    { id: 4, nombre: "lactancia", precio: 8000,link: './paginas/bienestar.html' },
 ];
 
 const buscarProductos = (nombre) => {
@@ -132,6 +132,7 @@ const buscarProductos = (nombre) => {
             let item = document.createElement("div");
             item.innerHTML = `<p> Nombre: ${prod.nombre} </p>
                          <p>Precio: ${prod.precio}  </p>
+                         <a href="${prod.link}">detalle </a>
                          ` ;
                          item.className ='resultado col-3 card border-success mb-3';
 

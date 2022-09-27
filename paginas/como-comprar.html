@@ -49,9 +49,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="./alimentacion.html">Alimentación</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./">Quienes somos</a>
-                                </li>
+                                
                                 <li class="nav-item">
                                     <a class="nav-link" href=".">Como Comprar</a>
                                 </li>
@@ -84,10 +82,57 @@
 
     </div>
     
+    <!-- prueba -->
 
     <h2>Contacto</h2>
     <div class="container-fluid formato">
-      <form class="row g-3 fomulario">
+      <form id="formulario" class="row g-3 fomulario">
+        <div class="col-md-6 col-xs-12">
+          <label for="name" class="form-label">Nombre Completo</label>
+          <input name="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="col-md-6 col-xs-12">
+          <label for="email" class="form-label">Email</label>
+          <input name="email"  type="Email" class="form-control" id="email">
+        </div>
+
+
+        <div class="col-12">
+          <label for="mensaje" class="form-label">Deja aca tu comentario</label>
+          <textarea class="form-control" id="mensaje" name="mensaje"></textarea>
+        </div>
+      
+
+       <!--  <div class="col-md-4 col-xs-12">
+          <label for="inputGenero" class="form-label">Genero</label>
+          <select id="inputGenero" class="form-select">
+            <option selected>Elige</option>
+            <option>Mujer</option>
+            <option>Hombre</option>
+            <option>Otro</option>
+          </select>
+        </div> -->
+
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success">Enviar</button>
+        </div>
+      </form>
+
+
+      <a href="mailto:barbara1860@gmail.com" id="correoRecepcion">correo</a>
+      
+    </div>
+
+
+
+
+
+
+
+<!-- 
+    <h2>Contacto</h2>
+    <div class="container-fluid formato">
+      <form id="formulario" class="row g-3 fomulario">
         <div class="col-md-6 col-xs-12">
           <label for="inputNombre4" class="form-label">Nombre Completo</label>
           <input type="text" class="form-control" id="inputNombre4">
@@ -118,11 +163,16 @@
       </form>
     </div>
 
+ -->
+
 
     <footer>
 
     </footer>
 
+
+    
+    <script src="../formulario.js"> </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
         integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
         crossorigin="anonymous"></script>

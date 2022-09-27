@@ -7,15 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- tipos de letra -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Cormorant+Garamond&family=Gentium+Plus&family=Quicksand&display=swap"
+        rel="stylesheet">
+    
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-   
+
 
     <!-- estilos -->
     <link rel="stylesheet" href="./style.css">
+
 </head>
 
 
@@ -56,20 +65,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="./paginas/alimentacion.html">Alimentación</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./paginas/quienes-somos.html">Quienes somos</a>
-                                </li>
+
                                 <li class="nav-item">
                                     <a class="nav-link" href="./paginas/como-comprar.html">Como Comprar</a>
                                 </li>
                             </ul>
                         </div>
 
-                        <form class="d-flex" role="search">
-                            <input id="inpBuscar" class="form-control me-2" type="search" placeholder="buscador"
-                                aria-label="Search">
-                            <button id="btnBuscar" class="btn btn-outline-success" type="submit">Buscador</button>
-                        </form>
+                       
 
                         <div class="carro p-2">
 
@@ -83,7 +86,11 @@
                     </div>
                 </nav>
             </div>
-
+            <form class="d-flex" role="search">
+                <input id="inpBuscar" class="form-control me-2" type="search" placeholder="buscador"
+                    aria-label="Search">
+                <button id="btnBuscar" class="btn btn-outline-success" type="submit">Buscador</button>
+            </form>
         </div>
 
         <!--  Modal -->
@@ -111,8 +118,14 @@
                                     </tr>
                                 </thead>
                                 <tbody id="items"></tbody>
-                                
+                                <tfoot>
+                                    <tr id="footer">
+                                    <th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>
+                                    </tr>
+                                </tfoot>
+
                             </table>
+                            
                             <div class="row" id="cards"></div>
                         </div>
 
@@ -124,9 +137,9 @@
                 </div>
             </div>
         </div>
-        
-        <div class="row mb-3">
-            <a href="./index.html"></a><img src=" ./imagenes/naturaleza-y-salud.jpg" alt="Logo de mi pagina">
+
+        <div class="row mb-3 pt-5">
+            <a href="./index.html"></a><img src="./imagenes/manos.jpg" alt="Logo de mi pagina">
         </div>
 
         </header>
@@ -167,10 +180,10 @@
         <!--  <div class="row">
             <div class="col-3"> -->
 
-        <section class="d-flex justify-content-center mt-5">
+       <!--  <section class="d-flex justify-content-center mt-5">
             <article class="container">
-                <div id="contenedor-productos" class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="card m-3 p-3">
+                <div id="contenedor-productos" class="row row-cols-4 <!row-cols -->
+                    <!-- <div class="card m-3 p-3">
                         <img src="./imagenes/cuello.jpg" class="card-img-top" alt="Guatero cuello">
                         <div class="card-body">
                             <h5>Guatero Cuello</h5>
@@ -180,7 +193,9 @@
                     </div>
                 </div>
             </article>
-        </section>
+        </section> --> 
+
+
         <!--  </div> -->
         <!--  <div class="col-3">
                 <div class="card border-success mb-3" style="width: 12rem;">
@@ -230,17 +245,79 @@
             </div> -->
 
         </main>
-        <!--   </div>
 
+        <!-- carrusel -->
+        <div class=" carrusel row"> 
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./imagenes/cuello.jpg " width="400" height="200" <!-- class="d-block w-50" --> alt="guatero cuello">
+              </div>
+              <div class="carousel-item">
+                <img src="./imagenes/guaterolumbar.jpg" class="d-block w-50" alt="guatero lumbar">
+              </div>
+              <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
-       </div> 
+        </div>
+
 
         <footer>
+            <div class="container-fluid footer">
+                <div class="row p-2">
 
+                    <div class="col-4 mt-4">
+                        <h4>Conoce mas sobre nosotras</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat autem consectetur quisquam
+                            ut minus! Beatae quae sequi temporibus nam. Asperiores temporibus ab aliquid in. Nesciunt
+                            saepe quasi maxime praesentium! Eaque.
+                            Velit, ad? Nihil quod, ea pariatur error fugiat quasi cum quia molestiae magni cupiditate
+                            consequatur delectus esse vero quos totam minima atque voluptate, ratione eius, libero
+                            laudantium deleniti. Est, in?
+                        </p>
+
+                    </div>
+
+
+                        <iframe class="mapa  col-6 mt-4"   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26630.442737661495!2d-70.60115524999999!3d-33.45437765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf94fc4d36e9%3A0x958d6f16dffe5145!2zw5F1w7FvYSwgUmVnacOzbiBNZXRyb3BvbGl0YW5h!5e0!3m2!1ses!2scl!4v1663989377290!5m2!1ses!2scl " 
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+
+                   
+
+
+                    <div class=" redes col-2 mt-4">
+                        <h4 class="contenedorSociales"> Redes Sociales:</h4>
+                        <div class="contenedorSociales mb-2">
+                            <a href="https://www.facebook.com/deli-sabores" target="_blank"></a>
+                            <i class="bi bi-facebook"></i>
+                        </div>
+                        <div class="contenedorSociales mb-2">
+                            <a href="https://www.instagram.com/deli-sabores" target="_blank"></a>
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                    </div>
+                    <div class="company text-center mt-4">
+                        <p>&copy; 2022 Emporio Sano y Feliz. Todos los derechos reservados.</p>
+                    </div>
+
+                </div>
+            </div>
         </footer>
-        </div>
-      <!-- alerta -->
-       <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+        <!-- alerta -->
+        <script defer src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
             integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
