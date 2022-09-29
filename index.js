@@ -112,6 +112,7 @@ buscarProductos(nombre);  */
 
 /* evento */
 
+/* buscador de productos */
 const productosPrueba = [
     { id: 1, nombre: "guatero semillas", precio: 10000, link: './paginas/bienestar.html' },
     { id: 2, nombre: "lumbar", precio: 8000,link: './paginas/bienestar.html' },
