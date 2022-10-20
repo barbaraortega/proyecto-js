@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Guatero lumbar",
+        "precio": 11000,
+        "foto": "../imagenes/guaterolumbar.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Guatero Cuello",
+        "precio": 9000,
+        "foto": "../imagenes/cuello.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Lactancia",
+        "precio": 15000,
+        "foto": "../imagenes/lactancia.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Guatero de muñeca",
+        "precio": 8000,
+        "foto": "../imagenes/mano-1.jpg"
+    }
+]

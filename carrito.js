@@ -1,9 +1,9 @@
 class Producto {
-    constructor(id, nombre, precio, foto) {
-        this.id = id;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.foto = foto;
+    constructor(producto) {
+        this.id = producto.id;
+        this.nombre = producto.nombre;
+        this.precio = producto.precio;
+        this.foto = producto.foto;
     }
 }
 
@@ -30,53 +30,65 @@ const contenedorFooterCarrito = document.querySelector("#footer");
 cargarProductos();
 cargarCarrito();
 dibujarCarrito();
-dibujarCatalogoProductos(); 
+
 
 /**
  * funciones
  */
 
 function cargarProductos() {
-    productos.push(new Producto(1, 'Guatero lumbar', 11000, '../imagenes/guaterolumbar.jpg'));
-    productos.push(new Producto(2, 'Guatero Cuello', 9000, '../imagenes/cuello.jpg'));
-    productos.push(new Producto(3, 'Lactancia', 15000, '../imagenes/lactancia.jpg'));
-    productos.push(new Producto(4, 'Guatero de muñeca', 8000, '../imagenes/mano-1.jpg'));
+    fetch('/productos.json', {
+        method: 'GET'
+    })
+    .then(res => res.json())
+    .then(data => {
+        for (const product of data) {
+            productos.push(new Producto(product));
+        }
+        if(productos.length > 0){
+            dibujarCatalogoProductos();
+        }
+        
+    })
+    .catch(err => {
+        console.log(err);
+    })
 
 }
 
- function cargarCarrito() { 
-  const x= localStorage.getItem("carro");
-  if(x){
-    const pRecuperados=JSON.parse(x);
-    pRecuperados.forEach(
-        (elemento) => {
-            elementosCarrito.push(elemento)   
-        })
-  }
- } 
+function cargarCarrito() {
+    const x = localStorage.getItem("carro");
+    if (x) {
+        const pRecuperados = JSON.parse(x);
+        pRecuperados.forEach(
+            (elemento) => {
+                elementosCarrito.push(elemento)
+            })
+    }
+}
 
 function dibujarCarrito() {
     contenedorCarritoCompras.innerHTML = "";
-    
-/*     totalCarrito.innerHTML = ""; */
 
-    let total=0;
+    /*     totalCarrito.innerHTML = ""; */
+
+    let total = 0;
     elementosCarrito.forEach(
         (elemento) => {
-            total=total+(elemento.producto.precio*elemento.cantidad);
-            let renglonesCarrito= document.createElement("tr");
+            total = total + (elemento.producto.precio * elemento.cantidad);
+            let renglonesCarrito = document.createElement("tr");
 
             /* desestructuracion */
             /* const { id,precio}=elemento.producto;
             console.log(id,precio); */
-            
+
             renglonesCarrito.innerHTML = `
                 <td>${elemento.producto.id}</td>
                 <td>${elemento.producto.nombre}</td>
                 <td><input id="cantidad-producto-${elemento.producto.id}" type="number" value="${elemento.cantidad}" min="1" max="1000" step="1" style="width: 50px;"/></td>
                 <td>$ ${estandarPesosChilenos.format(elemento.producto.precio)}</td>
-                <td>$ ${estandarPesosChilenos.format(elemento.producto.precio*elemento.cantidad)}</td>
-                <td><button id="eliminar-producto-${elemento.producto.id}" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>
+                <td>$ ${estandarPesosChilenos.format(elemento.producto.precio * elemento.cantidad)}</td>
+                <td><button id="eliminar-producto-${elemento.producto.id}" type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button></td>  
                 
             `;
 
@@ -95,10 +107,10 @@ function dibujarCarrito() {
             //Agregar evento a eliminar producto
             let botonEliminarProducto = document.getElementById(`eliminar-producto-${elemento.producto.id}`);
             botonEliminarProducto.addEventListener('click', () => {
-                
-                let indiceEliminar =  elementosCarrito.indexOf(elemento);
-                elementosCarrito.splice(indiceEliminar,1);
-                
+
+                let indiceEliminar = elementosCarrito.indexOf(elemento);
+                elementosCarrito.splice(indiceEliminar, 1);
+
                 dibujarCarrito();
             });
 
@@ -106,37 +118,16 @@ function dibujarCarrito() {
         }
     );
 
-/* total carrito */
-    /* const valorInicial = 0;
-    const totalCompra = elementosCarrito.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.producto.precio*currentValue.cantidad,
-        valorInicial
-    );
-
-    if(elementosCarrito.length === 0) {
-        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`;
-    } else {
-        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: ${totalCompra}</th>`;
-    }
-      */
-     
 
     /* total carrito con operador ternario */
 
     const valorInicial = 0;
     const totalCompra = elementosCarrito.reduce(
-        (previousValue, currentValue) => previousValue + currentValue.producto.precio*currentValue.cantidad,
+        (previousValue, currentValue) => previousValue + currentValue.producto.precio * currentValue.cantidad,
         valorInicial
     );
 
-    /* if(elementosCarrito.length === 0) {
-        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`;
-    } else {
-        contenedorFooterCarrito.innerHTML = `<th scope="row" colspan="6">Total de la compra: ${totalCompra}</th>`;
-    } */
-    
-
-    contenedorFooterCarrito.innerHTML=elementosCarrito.length === 0 ? `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>`:`<th scope="row" colspan="6">Total de la compra: ${totalCompra}</th>`;
+    contenedorFooterCarrito.innerHTML = elementosCarrito.length === 0 ? `<th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>` : `<th scope="row" colspan="6">Total de la compra: ${totalCompra}</th>`;
 
 
 }
@@ -179,14 +170,14 @@ function crearCard(producto) {
     carta.append(cuerpoCarta);
 
 
-/* evento */
+    /* evento */
     botonAgregar.onclick = () => {
 
-        let elementoExistente = 
+        let elementoExistente =
             elementosCarrito.find((elem) => elem.producto.id === producto.id);
-        
-        if(elementoExistente) {
-            elementoExistente.cantidad+=1;
+
+        if (elementoExistente) {
+            elementoExistente.cantidad += 1;
         } else {
             let elementoCarrito = new ElementoCarrito(producto, 1);
             elementosCarrito.push(elementoCarrito);
@@ -211,9 +202,9 @@ function crearCard(producto) {
                 }
             }
         }).then((decision) => {
-            if(decision) {
-                const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {keyboard: true});
-                const modalToggle = document.getElementById('toggleMyModal'); 
+            if (decision) {
+                const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), { keyboard: true });
+                const modalToggle = document.getElementById('toggleMyModal');
                 myModal.show(modalToggle);
             } else {
                 swal("No quieres ir al carrito");
@@ -221,7 +212,7 @@ function crearCard(producto) {
         });
 
     }
-   
+
     return carta;
 
 }

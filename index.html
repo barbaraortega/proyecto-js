@@ -11,11 +11,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Cormorant+Garamond&family=Gentium+Plus&family=Quicksand&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Cormorant+Garamond&family=Gentium+Plus&family=Quicksand&display=swap"
+        rel="stylesheet">
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
@@ -26,7 +29,6 @@
 
 <body>
 
-
     <div class="container">
 
         <div class="row mt-3">
@@ -35,8 +37,6 @@
                     Emporio Sano y Feliz.
                 </h1>
         </div>
-        <!-- js -->
-        <div id="contenedor" class="row"></div>
 
         <div class="row">
 
@@ -58,183 +58,229 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="./paginas/bienestar.html">Bienestar</a>
                                 </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./paginas/alimentacion.html">Alimentación</a>
-                                </li>
 
                                 <li class="nav-item">
                                     <a class="nav-link" href="./paginas/como-comprar.html">Como Comprar</a>
                                 </li>
                             </ul>
                         </div>
-<!-- carrito de compras -->
+
+
+                        <!-- carrito de compras -->
                         <div class="carro p-2">
+
 
                             <!-- Button trigger modal -->
                             <button id="toggleMyModal" type="button" class="btn btn-success" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
-                                Carrito<i class="bi bi-bag-check-fill"></i>
+                                <i class="bi bi-cart4"></i>
                             </button>
                         </div>
+
+
 
                     </div>
                 </nav>
             </div>
-            <form class="d-flex" role="search">
-                <input id="inpBuscar" class="form-control me-2" type="search" placeholder="buscador"
-                    aria-label="Search">
-                <button id="btnBuscar" class="btn btn-outline-success" type="submit">Buscador</button>
-            </form>
         </div>
 
-        <!--  Modal -->
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">ID</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Total</th>
-                                        <th scope="col">Eliminar</th>
+        <!-- buscador -->
+        <div class="row">
 
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="items"></tbody>
-                                <tfoot>
-                                    <tr id="footer">
-                                        <th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>
-                                    </tr>
-                                </tfoot>
+            <div class="container h-100">
+                <div class="d-flex justify-content-center h-100">
+                    <div class="searchbar">
+                        <input id="inpBuscar" class="search_input" type="text" name=""
+                            placeholder="¿que producto buscas hoy?">
+                        <a href="#" class="search_icon"> <i id="btnBuscar" class="bi bi-search-heart-fill"></i></a>
 
-                            </table>
-
-                            <div class="row" id="cards"></div>
-                        </div>
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary">Terminar compra</button>
                     </div>
                 </div>
             </div>
+
         </div>
+  
 
-        <div class="row mb-3 pt-5">
-            <a href="./index.html" class="logo"></a><img src="./imagenes/manos.jpg" alt="Logo de mi pagina">
+    <div>
+        <!-- resultado buscador -->
+        <div class="buscadorResultado">
+            <ul id="resultado">
+                <!-- <li></li> -->
+            </ul>
         </div>
+    </div>
 
-        </header>
 
-        <div class="row mb-3">
-            <main>
+    <!-- js buscador -->
+    <div class="buscadorResultado">
+        <div id="contenedor" class="row"></div>
+    </div>
 
-                <section>
-                    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a, fugiat ad ex cumque sint
-                        libero
-                        repudiandae. Animi tempora tenetur incidunt minima, obcaecati, quis veritatis excepturi
-                        voluptates modi
-                        accusamus dignissimos?
-                        Sapiente, quibusdam. Autem laudantium consequuntur debitis ipsa ipsam corporis nisi temporibus
-                        esse
-                        quia, delectus eveniet a et illum incidunt distinctio accusantium quis in, vero libero
-                        exercitationem
-                        repellendus ducimus deleniti accusamus.
-                        Iure exercitationem facilis ad inventore vero obcaecati repudiandae accusantium corrupti
-                        delectus
-                        doloremque! Magnam, porro. Commodi voluptatem ipsum nobis illo minus sit obcaecati quos est fuga
-                        assumenda tempore, aperiam excepturi placeat?
-                        Cupiditate veniam quibusdam tempora unde officia reprehenderit architecto voluptatum porro in
-                        doloremque
-                        totam hic sit consectetur obcaecati nostrum repellat id, magnam neque! Quidem, quaerat possimus
-                        illum
-                        voluptatum ad doloribus dolor?
-                        Et necessitatibus, magnam provident iusto explicabo, aperiam repellat hic ut corporis expedita
-                        ducimus
-                        omnis eveniet doloribus repellendus sunt. Eius adipisci eaque omnis fugit aliquid sit similique
-                        fuga hic
-                        temporibus voluptate.
+
+    <!--  Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Total</th>
+                                    <th scope="col">Eliminar</th>
+
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="items"></tbody>
+                            <tfoot>
+                                <tr id="footer">
+                                    <th scope="row" colspan="6">Carrito vacío - comience a comprar!</th>
+                                </tr>
+                            </tfoot>
+
+                        </table>
+
+                        <div class="row" id="cards"></div>
                     </div>
-                </section>
-        </div>
 
-        </main>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="./paginas/como-comprar.html"><button type="button" class="btn btn-primary">Terminar
+                            compra </button></a>
 
-
-        <!-- Carrusel-->
-
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="10000">
-                <a href="./paginas/bienestar.html"><img src="./imagenes/cuello2.jpg" class="d-block w-100" alt="cuello"></a>
+        </div>
+    </div>
+
+
+    </header>
+
+
+
+
+    <div class="row mb-3 pt-5 logo">
+        <a href="./index.html" class="logo"  ></a><img src="./imagenes/manos.jpg" alt="Logo de mi pagina">
+    </div>
+
+
+
+    <div class="row mb-3">
+        <main>
+
+            <section>
+                <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Error a, fugiat ad ex cumque sint
+                    libero
+                    repudiandae. Animi tempora tenetur incidunt minima, obcaecati, quis veritatis excepturi
+                    voluptates modi
+                    accusamus dignissimos?
+                    Sapiente, quibusdam. Autem laudantium consequuntur debitis ipsa ipsam corporis nisi temporibus
+                    esse
+                    quia, delectus eveniet a et illum incidunt distinctio accusantium quis in, vero libero
+                    exercitationem
+                    repellendus ducimus deleniti accusamus.
+                    Iure exercitationem facilis ad inventore vero obcaecati repudiandae accusantium corrupti
+                    delectus
+                    doloremque! Magnam, porro. Commodi voluptatem ipsum nobis illo minus sit obcaecati quos est fuga
+                    assumenda tempore, aperiam excepturi placeat?
+                    Cupiditate veniam quibusdam tempora unde officia reprehenderit architecto voluptatum porro in
+                    doloremque
+                    totam hic sit consectetur obcaecati nostrum repellat id, magnam neque! Quidem, quaerat possimus
+                    illum
+                    voluptatum ad doloribus dolor?
+                    Et necessitatibus, magnam provident iusto explicabo, aperiam repellat hic ut corporis expedita
+                    ducimus
+                    omnis eveniet doloribus repellendus sunt. Eius adipisci eaque omnis fugit aliquid sit similique
+                    fuga hic
+                    temporibus voluptate.
+                </div>
+            </section>
+    </div>
+
+    </main>
+
+
+    <!-- Carrusel-->
+
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <a href="./paginas/bienestar.html"><img src="./imagenes/cuello2.jpg" class="d-block w-100"
+                        alt="cuello"></a>
                 <div class="carousel-caption d-none d-md-block">
-                  <h5>Etiqueta de la primera diapositiva</h5>
-                  <p>Algún contenido placeholder representativo para la primera diapositiva.</p>
+                    <h5>Guatero para cuello</h5>
                 </div>
-              </div>
-
-              <div class="carousel-item" data-bs-interval="2000">
-               <a href="./paginas/bienestar.html"> <img src="./imagenes/guaterolumbar.jpg" class="d-block w-100" alt="lumbar"></a>
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Etiqueta de la segunda diapositiva</h5>
-                  <p>Algún contenido placeholder representativo para la segunda diapositiva.</p>
-                </div>
-              </div>
-
-
-              <div class="carousel-item">
-                <a href="./paginas/bienestar.html"><img src="./imagenes/lactancia.jpg" class="d-block w-100" alt="lactancia">
-                <div class="carousel-caption d-none d-md-block"></a>
-                  <h5>Etiqueta de la tercera diapositiva</h5>
-                  <p>Algún contenido placeholder representativo para la tercera diapositiva.</p>
-                </div>
-              </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
-          </div>
+
+            <div class="carousel-item" data-bs-interval="2000">
+                <a href="./paginas/bienestar.html"> <img src="./imagenes/guaterolumbar.jpg" class="d-block w-100"
+                        alt="lumbar"></a>
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Guatero Lumbar</h5>
+                </div>
+            </div>
 
 
-            
-    
+            <div class="carousel-item">
+                <a href="./paginas/bienestar.html"><img src="./imagenes/lactancia.jpg" class="d-block w-100"
+                        alt="lactancia">
+                    <div class="carousel-caption d-none d-md-block">
+                </a>
+                <h5>Guatero Lactancia</h5>
 
-        <div class="container-boton">
-            <a href="https://wa.me/+56998307324?text=Bienvenido(a)%20a%20Emporio%20sano%20y%20feliz" target="_blank" class="wsp">
-                <i class="bi bi-whatsapp"></i>
-            </a>
+            </div>
         </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+    </div>
 
-    
+
+
+    <!-- wsp -->
+
+    <div class="container-boton">
+        <a href="https://wa.me/+56998307324?text=Bienvenido(a)%20a%20Emporio%20sano%20y%20feliz" target="_blank"
+            class="wsp">
+            <i class="bi bi-whatsapp"></i>
+        </a>
+    </div>
+
+
     </div>
 
     <footer>
-        <div class="container-fluid footer">
-            <div class="row p-5">
 
-                <div class="col-4 mt-4">
+        <div class="container-fluid footer">
+            <div class="row p-3">
+
+                <div class="col-4 mt-2">
                     <h4>Conoce mas sobre nosotras</h4>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat autem consectetur quisquam
                         ut minus! Beatae quae sequi temporibus nam. Asperiores temporibus ab aliquid in. Nesciunt
@@ -255,21 +301,27 @@
 
                 <div class=" redes col-2 mt-4">
                     <h4 class="contenedorSociales"> Redes Sociales:</h4>
+
                     <div class="contenedorSociales mb-2">
-                        <a href="https://www.facebook.com/deli-sabores" target="_blank"></a>
+                        <a href="https://www.facebook.com"target="_blank"></a>
                         <i class="bi bi-facebook"></i>
                     </div>
+
+
                     <div class="contenedorSociales mb-2">
-                        <a href="https://www.instagram.com/deli-sabores" target="_blank"></a>
+                        <a href="https://www.instagram.com" target="_blank"></a>
                         <i class="bi bi-instagram"></i>
                     </div>
+
                 </div>
+
                 <div class="company text-center mt-4">
                     <p>&copy; 2022 Emporio Sano y Feliz. Todos los derechos reservados.</p>
                 </div>
 
             </div>
         </div>
+        
     </footer>
 
     <!-- alerta -->
@@ -282,10 +334,8 @@
         integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
         crossorigin="anonymous"></script>
 
-<script src="./carousel.js"></script>
-
+    <!-- js -->
     <script src="./carrito.js"> </script>
-
     <script src="./index.js"> </script>
 
 </body>

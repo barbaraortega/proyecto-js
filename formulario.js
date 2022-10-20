@@ -1,28 +1,5 @@
-/* const formularioContacto= document.getElementById("formulario"); */
-/* boton correo envio formulario */
-/* const botonMailTo = document.getElementById("correoRecepcion");
 
-formularioContacto.addEventListener("submit",enviarMensaje);
-
-function enviarMensaje(e){
-    e.preventDefault()
-
-
-const form= new FormData(formularioContacto)
-console.log(form.get("name")); 
-
-botonMailTo.setAttribute("href",`mailto:barbara1860@gmail.com?subject=nombre ${form.get("name")} correoElec${form.get('email')}&body=${form.get('mensaje')}`);
-
-botonMailTo.click()
-
- 
-};
- */
-
-
-
-
-/* opcion 2 */
+/*formulario de contacto */
 
 const formularioContacto = document.getElementById("formulario");
 formularioContacto.addEventListener("submit", enviarMensaje);
@@ -41,11 +18,14 @@ async function enviarMensaje(e) {
         })
         if (response.status === 0) {
             formularioContacto.reset()
-            alert("gracias")
+
+            swal("Tu correo se ha enviado correctamente!", "Pronto te responderemos", "success");
+            
         } else {
             console.log(response);
         }
     } catch (error) {
-alert("ocurrio un error")
+        swal("oopss", "ocurrio un error", "error");
+
     }
 } 
